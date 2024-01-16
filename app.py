@@ -99,8 +99,13 @@ if st.button("Télécharger en PDF"):
     c.drawString(30, client_info_y - 15, "Date: " + current_date)
     c.drawString(30, client_info_y - 30, "Adresse:" + adresse)
     c.line(30, client_info_y - 40, 550, client_info_y - 40)
-
-    table_offset = 60
+    
+    if len(df_updated) <=20:
+        table_offset = 40
+    else :
+        table_offset = 200
+           
+    
     table_start_y = client_info_y - 40 - table_offset
 
     max_table_height = 400
