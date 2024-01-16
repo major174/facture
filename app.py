@@ -100,16 +100,16 @@ if st.button("Télécharger en PDF"):
     c.drawString(30, client_info_y - 30, "Adresse:" + adresse)
     c.line(30, client_info_y - 40, 550, client_info_y - 40)
 
-    table_offset = 200
+    table_offset = 60
     table_start_y = client_info_y - 40 - table_offset
 
     max_table_height = 400
 
     # Calculer la hauteur totale du tableau
     total_table_height = len(df_updated) * 20
-    st.write(len(df_updated))
+
     # Si la hauteur totale du tableau est inférieure à la hauteur maximale autorisée, ajuster la position du tableau vers le bas
-    if total_table_height  <max_table_height:
+    if total_table_height < max_table_height:
         table_start_y = client_info_y - 40 - total_table_height + table_offset
 
     table_data = [list(df_updated.columns)] + df_updated.values.tolist()
